@@ -63,6 +63,8 @@ def add_to_replay_buffer(replay_buffer, training_data, is_normalize):
     for row in training_data.itertuples():
         state, action, reward, next_state, done = row.state if not is_normalize else row.normalize_state, row.action, row.reward if not is_normalize else row.normalize_reward, row.next_state if not is_normalize else row.normalize_nextstate, row.done
         # ! 去掉了所有的done==1的数据
+        print("state")
+        print(state, action, reward, next_state)
         if done != 1:
             replay_buffer.push(np.array(state), np.array([action]), np.array([reward]), np.array(next_state),
                                np.array([done]))
