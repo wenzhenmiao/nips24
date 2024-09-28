@@ -2,4 +2,7 @@
 **/*.pyc
 *output*
 *data
+saved_model/BCtest
+saved_model/onlineLpTest
 .git/
+script
